@@ -11,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
+import java.util.Date;
 
 @Service
 public class ItemServiceImpl implements ItemService {
@@ -24,11 +25,10 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public ItemDto save(ItemDto item) {
-        //Add Business Logic
-        Item itemDb = modelMapper.map(item, Item.class);
-        itemDb = itemRepository.save(itemDb);
-        return modelMapper.map(itemDb, ItemDto.class);
+    public ItemDto save(ItemDto itemDto) {
+        Item item = modelMapper.map(itemDto, Item.class);
+        item = itemRepository.save(item);
+        return modelMapper.map(item, ItemDto.class);
     }
 
     @Override
