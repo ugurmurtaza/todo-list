@@ -11,7 +11,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
-import java.util.Date;
 
 @Service
 public class ItemServiceImpl implements ItemService {
@@ -26,10 +25,36 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public ItemDto save(ItemDto itemDto) {
+        Item itemIsExist = itemRepository.getByName(itemDto.getName());
+
+        if (itemIsExist != null) {
+            throw new IllegalArgumentException("Item already exists");
+        }
+
         Item item = modelMapper.map(itemDto, Item.class);
         item = itemRepository.save(item);
-        return modelMapper.map(item, ItemDto.class);
+        itemDto.setId(item.getId());
+
+        return itemDto;
     }
+
+    @Override
+    public ItemDto update(Long id, ItemDto itemDto) {
+        Item itemDb = itemRepository.getOne(id);
+        if (itemDb==null){
+            throw new IllegalArgumentException("Item : " + id + " does not exists!");
+        }
+        Item itemIsExist = itemRepository.getByName(itemDto.getName());
+        if (itemIsExist != null) {
+            throw new IllegalArgumentException("Item already exists");
+        }
+        itemDb.setName(itemDto.getName());
+        itemDb.setDate(itemDto.getDate());
+
+        itemRepository.save(itemDb);
+        return modelMapper.map(itemDb, ItemDto.class);
+    }
+
 
     @Override
     public PageDto<ItemDto> getAllPageable(Pageable pageable) {
@@ -42,5 +67,11 @@ public class ItemServiceImpl implements ItemService {
     @Override
     public Boolean delete(ItemDto item) {
         return null;
+    }
+
+    @Override
+    public Boolean delete(Long id) {
+        itemRepository.deleteById(id);
+        return true;
     }
 }

@@ -1,0 +1,2 @@
+--INSERT INTO ITEMS(id,item_name,due_date,is_checked) values(1,"Yumurta","2020-12-12",true);
+--INSERT INTO ITEMS(id,item_name,due_date,is_checked) values(2,"Elma","2020-11-11",false);
