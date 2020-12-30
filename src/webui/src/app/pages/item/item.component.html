@@ -1,0 +1,54 @@
+<div class="example-container">
+  <div class="form-container">
+    <form [formGroup]="addForm" (submit)="submit()">
+      <table mat-table class="mat-elevation-z8">
+        <th mat-header-cell>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label> New Item </mat-label>
+            <input matInput formControlName="newItem" required />
+          </mat-form-field>
+        </th>
+        <th mat-header-cell>
+          <button mat-raised-button color="primary" type="submit">Save</button>
+        </th>
+      </table>
+    </form>
+  </div>
+</div>
+
+<div class="content-wrapper">
+  <ngx-datatable
+    class="bootstrap"
+    [rows]="rows"
+    [columns]="cols"
+    [columnMode]="'force'"
+    [headerHeight]="50"
+    [footerHeight]="50"
+    rowHeight="auto"
+    [externalPaging]="true"
+    [count]="page.totalElements"
+    [offset]="page.page"
+    [limit]="page.size"
+    (page)="setPage($event)"
+  >
+    <ngx-datatable-column
+      *ngFor="let column of cols; let i = index"
+      name="{{ column.name }}"
+      prop="{{ column.prop }}"
+    >
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Actions" sortable="false" prop="Id">
+      <ng-template
+        let-row="row"
+        let-value="value"
+        let-rowIndex="rowIndex"
+        ngx-datatable-cell-template
+      >
+        <button type="button" class="btn btn-primary">Update</button>
+        <button class="btn btn-dark" (click)="deleteItem(row)">Delete</button>
+      </ng-template>
+    </ngx-datatable-column>
+
+  </ngx-datatable>
+</div>
