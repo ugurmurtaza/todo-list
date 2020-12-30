@@ -1,0 +1,98 @@
+[
+  {
+    "_class" : "com.bist.homework.todolist.entity.Item",
+    "name" : "Yumurta",
+    "date" : "2020-12-12",
+    "checked" : false
+  },
+  {
+    "_class" : "com.bist.homework.todolist.entity.Item",
+    "name" : "Ekmek",
+    "date" : "2020-12-12",
+    "checked" : false
+  },
+  {
+    "_class" : "com.bist.homework.todolist.entity.Item",
+    "name" : "Süt",
+    "date" : "2020-12-12",
+    "checked" : false
+  },
+  {
+    "_class" : "com.bist.homework.todolist.entity.Item",
+    "name" : "Kraker",
+    "date" : "2020-12-12",
+    "checked" : false
+  },
+  {
+    "_class" : "com.bist.homework.todolist.entity.Item",
+    "name" : "Çay",
+    "date" : "2020-12-12",
+    "checked" : false
+  },
+  {
+    "_class" : "com.bist.homework.todolist.entity.Item",
+    "name" : "Çikolata",
+    "date" : "2020-12-12",
+    "checked" : false
+  },
+  {
+    "_class" : "com.bist.homework.todolist.entity.Item",
+    "name" : "Tahin",
+    "date" : "2020-12-12",
+    "checked" : false
+  },
+  {
+    "_class" : "com.bist.homework.todolist.entity.Item",
+    "name" : "Pekmez",
+    "date" : "2020-12-12",
+    "checked" : false
+  },
+  {
+    "_class" : "com.bist.homework.todolist.entity.Item",
+    "name" : "Galeta",
+    "date" : "2020-12-12",
+    "checked" : false
+  },
+  {
+    "_class" : "com.bist.homework.todolist.entity.Item",
+    "name" : "Peynir",
+    "date" : "2020-12-12",
+    "checked" : false
+  },
+  {
+    "_class" : "com.bist.homework.todolist.entity.Item",
+    "name" : "Zeytin",
+    "date" : "2020-12-12",
+    "checked" : false
+  },
+  {
+    "_class" : "com.bist.homework.todolist.entity.Item",
+    "name" : "Zeytinyağı",
+    "date" : "2020-12-12",
+    "checked" : false
+  },
+  {
+    "_class" : "com.bist.homework.todolist.entity.Item",
+    "name" : "Tuz",
+    "date" : "2020-12-12",
+    "checked" : false
+  },
+  {
+    "_class" : "com.bist.homework.todolist.entity.Item",
+    "name" : "Şeker",
+    "date" : "2020-12-12",
+    "checked" : false
+  },
+  {
+    "_class" : "com.bist.homework.todolist.entity.Item",
+    "name" : "Biber",
+    "date" : "2020-12-12",
+    "checked" : false
+  },
+  {
+    "_class" : "com.bist.homework.todolist.entity.Item",
+    "name" : "Salatalık",
+    "date" : "2020-12-12",
+    "checked" : false
+  }
+]

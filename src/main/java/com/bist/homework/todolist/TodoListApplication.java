@@ -9,6 +9,9 @@ import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+import org.springframework.data.repository.init.Jackson2RepositoryPopulatorFactoryBean;
 
 //http://localhost:8080/swagger-ui/index.html?url=/v3/api-docs&validatorUrl=#/
 @OpenAPIDefinition(
@@ -33,4 +36,12 @@ public class TodoListApplication {
 		modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 		return modelMapper;
 	}
+
+//	@Bean
+//	public Jackson2RepositoryPopulatorFactoryBean repositoryPopulator()
+//	{
+//		Jackson2RepositoryPopulatorFactoryBean factory = new Jackson2RepositoryPopulatorFactoryBean();
+//		factory.setResources(new Resource[]{new ClassPathResource("items.json")});
+//		return factory;
+//	}
 }
